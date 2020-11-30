@@ -33,7 +33,7 @@
 ```jsx
 require("./Projects.tea");
 
-const {Block} = require("../../../../editor/components/internal"); 
+const {Block} = require("../../../lpcandy/front/editor/components/internal"); 
 
 class Projects extends Block {
  
@@ -68,8 +68,8 @@ exports.Projects = Projects;
 window.lpcandyRun(()=>{
 	  window._t.load(require("ru.js"));
 
-    const {Projects} = require('components/Projects/Projects');
-    const {Block} = require("../../editor/components/internal/Block/Block");
+    const {Projects} = require('./components/Projects/Projects');
+    const {Block} = require("../lpcandy/front/editor/components/internal/Block/Block");
     
     Block.register('projects',exports = Projects);
 });
@@ -84,13 +84,13 @@ let js_transform = (js) => js.replace(/([>`}])(\s*\n\s*)([<`\$])/mg,"$1$3").repl
 
 module.exports = {
     lpcandy: {
-        entry_point: "front/site/index.js",
-        bundle_path: "public/assets/lpcandy.min.js",
+        entry_point: "lpcandy/front/site/index.js",
+        bundle_path: "lpcandy/public/assets/lpcandy.min.js",
         js_transform
     },
     projects: {
-        entry_point: "front/extra/projects/index.js",
-        bundle_path: "public/upload/CMS/shop_products/projects.min.js",
+        entry_point: "lpcandy/front/extra/projects/index.js",
+        bundle_path: "lpcandy/public/upload/CMS/shop_products/projects.min.js",
         js_transform
     }
 }
@@ -98,7 +98,7 @@ module.exports = {
 
 Выполняем команду `bergamot build lpcandy projects`
 
-Для дальнейшего тестирования, скомпилированный файл необходимо подключить на странице редактора. Подключение компонентов находится в файле `/modules/LPCandy/template/front.php`
+Для дальнейшего тестирования, скомпилированный файл необходимо подключить на странице редактора. Подключение компонентов находится в файле `lpcandy/modules/LPCandy/template/front.php`
 
 ```php
 <?
@@ -127,7 +127,7 @@ module.exports = {
 Далее зададим, для нашего компонента, конфиг форму с настройками и данные по умолчанию, которые будут использоваться в шаблоне.
 
 ```jsx
-const {Block, Dialog} = require("../../../../editor/components/internal"); 
+const {Block, Dialog} = require("../../../lpcandy/front/editor/components/internal"); 
 
 class Projects extends Block {
 
@@ -184,8 +184,8 @@ class Projects extends Block {
 Теперь пришла очередь написать разметку для нашего компонента. Для этого в файле `Projects.js` добавим следующий код
 
 ```jsx
-const {Block,Text,BlockColor,Switch,Input,Dialog,Repeater} = require("../../../../editor/components/internal"); 
-const {Select} = require("../../../../editor/components/internal/Select/Select"); 
+const {Block,Text,BlockColor,Switch,Input,Dialog,Repeater} = require("../../../lpcandy/front/editor/components/internal"); 
+const {Select} = require("../../../lpcandy/front/editor/components/internal/Select/Select"); 
 const {ProjectCard} = require("../ProjectCard/ProjectCard"); 
 
 class Projects extends Block {
@@ -267,7 +267,7 @@ class Projects extends Block {
 Большая часть кода это HTML для отображения одного отдельного проекта. Следует отметить, то что для форматирования текста описания мы будем использовать markdown. Все файлы библиотек, которые дополнительно используются в компоненте, должны находится в папке `projects/lib`
 
 ```jsx
-const {Dialog} = require("../../../../editor/components/internal");
+const {Dialog} = require("../../../lpcandy/front/editor/components/internal");
 const marked = require('../../lib/marked');
 
 exports.ProjectCard = ({project,block_value}) => {
@@ -332,9 +332,9 @@ exports.ProjectCard = ({project,block_value}) => {
 Для этого создайте файл `ProjectsForm/ProjectForm.js`, и поместите в него следующий код:
 
 ```jsx
-const {EntityForm} = require("../../../../site/components/EntityForm/EntityForm");
-const {FormContext,Error,Text,TextArea} = require("../../../../site/components/Form/Form");
-const {UploadButton} = require("../../../../editor/components/internal/UploadButton/UploadButton");
+const {EntityForm} = require("../../../lpcandy/front/site/components/EntityForm/EntityForm");
+const {FormContext,Error,Text,TextArea} = require("../../../lpcandy/front/site/components/Form/Form");
+const {UploadButton} = require("../../../lpcandy/front/editor/components/internal/UploadButton/UploadButton");
 
 const MarkdownTextArea = (props) => {
     const textareaRef = preact.hooks.useRef();
@@ -426,7 +426,7 @@ exports.ProjectForm = ProjectForm;
 Также для для вывода, фильтрации и удаления проектов создадим новый файл `ProjectList/ProjectList.js`
 
 ```jsx
-const {EntityList} = require("../../../../site/components/EntityList/EntityList");
+const {EntityList} = require("../../../lpcandy/front/site/components/EntityList/EntityList");
 
 function ProjectList(props) {
     return html`<${EntityList}
@@ -470,11 +470,11 @@ exports.ProjectList = ProjectList;
 window.lpcandyRun(()=>{
     window._t.load(require("ru.js"));
 
-    const {Projects} = require('components/Projects/Projects');
+    const {Projects} = require('./components/Projects/Projects');
     const {ProjectList} = require('./components/ProjectList/ProjectList');
     const {ProjectForm} = require('./components/ProjectForm/ProjectForm');
-    const {Entity} = require("../../site/Entity");
-    const {Block} = require("../../editor/components/internal/Block/Block");
+    const {Entity} = require("../lpcandy/front/site/Entity");
+    const {Block} = require("../lpcandy/front/editor/components/internal/Block/Block");
     
     Block.register('projects',exports = Projects);
     

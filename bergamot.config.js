@@ -7,8 +7,8 @@ module.exports = {
         js_transform
     },
     projects: {
-        entry_point: "projects/index.js",
-        bundle_path: "projects/projects.min.js",
+        entry_point: "lpcandy/front/extra/projects/index.js",
+        bundle_path: "build/projects.min.js",
         js_transform
     }
 }
