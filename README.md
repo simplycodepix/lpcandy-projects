@@ -50,7 +50,7 @@ class Projects extends Block {
 
     tpl_1(val) {
         return html`<div>Projects</div>`
-		}
+	}
 
     tpl_default_1() {
         return config.language == 'en' ? {} : {}
@@ -66,7 +66,7 @@ exports.Projects = Projects;
 
 ```jsx
 window.lpcandyRun(()=>{
-	  window._t.load(require("ru.js"));
+	window._t.load(require("ru.js"));
 
     const {Projects} = require('./components/Projects/Projects');
     const {Block} = require("../lpcandy/front/editor/components/internal/Block/Block");
@@ -116,8 +116,8 @@ module.exports = {
     <script src="<?=INDEX_URL?>/assets/lpcandy.min.js"></script>
     <link  href="<?=INDEX_URL?>/assets/lpcandy.min.css" rel="stylesheet" type="text/css">
     
-    **<script src="<?=INDEX_URL?>/../build/projects.min.js"></script>
-    <script src="<?=INDEX_URL?>/../build/projects.min.css"></script>**
+    <script src="<?=INDEX_URL?>/../../build/projects.min.js"></script>
+    <script src="<?=INDEX_URL?>/../../build/projects.min.css"></script>
 
 ...
 ```
@@ -131,7 +131,7 @@ const {Block, Dialog} = require("../../../lpcandy/front/editor/components/intern
 
 class Projects extends Block {
 
-		... 
+	... 
 
     configForm() {
         var val = this.value;
@@ -151,7 +151,7 @@ class Projects extends Block {
         `;
     } 
 
-		...
+	...
 
     tpl_default_1() {
         return config.language == 'en' ? {
@@ -190,11 +190,11 @@ const {ProjectCard} = require("../ProjectCard/ProjectCard");
 
 class Projects extends Block {
  
-		...
+	...
 
     constructor(props) {
         super(props);
-				this.state = {
+		this.state = {
             projects: []
         };
     }
@@ -252,7 +252,7 @@ class Projects extends Block {
                 </div>
             </div>
         </div>
-		`}
+	`}
 
     ...
 } 
@@ -262,7 +262,7 @@ class Projects extends Block {
 
 ## ProjectCard
 
-Создайте новый файл `/ProjectCard/ProjectCard.js`
+Создайте новый файл `ProjectCard/ProjectCard.js`
 
 Большая часть кода это HTML для отображения одного отдельного проекта. Следует отметить, то что для форматирования текста описания мы будем использовать markdown. Все файлы библиотек, которые дополнительно используются в компоненте, должны находится в папке `projects/lib`
 
@@ -503,7 +503,7 @@ window.lpcandyRun(()=>{
 ```jsx
 class Projects extends Block {
 
-		...
+	...
 
     componentDidMount() {
         let searchCriteria = { type: 'project' };
@@ -518,5 +518,5 @@ class Projects extends Block {
         );
     }
 
-		...
+	...
 ```
