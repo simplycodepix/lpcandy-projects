@@ -1,7 +1,7 @@
 window.lpcandyRun(()=>{
     window._t.load(require("ru.js"));
 
-    const {Projects} = require('components/Projects/Projects');
+    const {Projects} = require('./components/Projects/Projects');
     const {ProjectList} = require('./components/ProjectList/ProjectList');
     const {ProjectForm} = require('./components/ProjectForm/ProjectForm');
     const {Entity} = require("../lpcandy/front/site/Entity");
