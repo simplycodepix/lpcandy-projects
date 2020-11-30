@@ -10,7 +10,7 @@
 
 # Компонент Projects
 
-![Projects component demo](images/demo_projects.gif)
+![Projects component demo](docs/images/demo_projects.gif)
 
 Для нашего примера необходимо реализовать 4 основных компонента: 
 
@@ -24,7 +24,7 @@
 
 Соответственно структура на данном этапе будет выглядеть следующим образом:
 
-![Project structure](images/project_structure.png)
+![Project structure](docs/images/project_structure.png)
 
 ## Projects
 
@@ -89,8 +89,8 @@ module.exports = {
         js_transform
     },
     projects: {
-        entry_point: "lpcandy/front/extra/projects/index.js",
-        bundle_path: "lpcandy/public/upload/CMS/shop_products/projects.min.js",
+        entry_point: "src/index.js",
+        bundle_path: "build/projects.min.js",
         js_transform
     }
 }
@@ -116,8 +116,8 @@ module.exports = {
     <script src="<?=INDEX_URL?>/assets/lpcandy.min.js"></script>
     <link  href="<?=INDEX_URL?>/assets/lpcandy.min.css" rel="stylesheet" type="text/css">
     
-    **<script src="<?=INDEX_URL?>/public/upload/CMS/shop_products/projects.min.js"></script>
-    <script src="<?=INDEX_URL?>/public/upload/CMS/shop_products/projects.min.css"></script>**
+    **<script src="<?=INDEX_URL?>/../build/projects.min.js"></script>
+    <script src="<?=INDEX_URL?>/../build/projects.min.css"></script>**
 
 ...
 ```
@@ -490,11 +490,11 @@ window.lpcandyRun(()=>{
 
 Здесь мы регистрируем новую сущность проект, теперь её также необходимо добавить и в панели управления, для этого необходимо перейти на страницу `/admin/lpcandy/entity-list`
 
-![Entity list page](images/admin_entity_list.png)
+![Entity list page](docs/images/admin_entity_list.png)
 
 Нажимаем на кнопку `Создать` и переходим на страницу редактирования сущности
 
-![Entity edit page](images/admin_entity_edit.png)
+![Entity edit page](docs/images/admin_entity_edit.png)
 
 Указываем тип сущности, который мы указали при регистрации в `projects/index.js`, задаём для него ограничения на доступ и нажимаем на кнопку `Save`. После чего, появится возможность добавлять новые проекты используя созданные нами страницы.
 
