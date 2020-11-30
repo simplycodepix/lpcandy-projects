@@ -1,0 +1,3 @@
+[submodule "lpcandy"]
+	path = lpcandy
+	url = https://github.com/boomyjee/lpcandy.git

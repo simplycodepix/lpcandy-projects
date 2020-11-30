@@ -1,0 +1,23 @@
+{
+  "name": "lpcandy-projects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "bergamot build projects"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simplycodepix/lpcandy-projects.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simplycodepix/lpcandy-projects/issues"
+  },
+  "homepage": "https://github.com/simplycodepix/lpcandy-projects#readme",
+  "dependencies": {
+    "bergamot": "^0.3.0"
+  }
+}
