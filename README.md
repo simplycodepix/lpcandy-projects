@@ -6,7 +6,7 @@
 
 Код и инструкция по установке доступны на GitHub - [https://github.com/boomyjee/lpcandy](https://github.com/boomyjee/lpcandy)
 
-Также, API документация доступна по ссылке - [https://github.com/boomyjee/lpcandy/blob/master/development_ru.md](https://github.com/boomyjee/lpcandy/blob/master/development_ru.md). Здесь вы можете ознакомиться с Api эндпоинтами и введением в разработку компонентов для LPCandy
+Также, API документация доступна по ссылке - [docs/development_ru.md](docs/development_ru.md). Здесь вы можете ознакомиться с Api эндпоинтами и введением в разработку компонентов для LPCandy
 
 # Компонент Projects
 
