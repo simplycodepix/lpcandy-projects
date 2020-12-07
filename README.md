@@ -77,20 +77,22 @@ window.lpcandyRun(()=>{
 
 Также на данном этапе необходимо зарегистрировать наш компонент для отображения и дальнейшего использования/тестирования компонента в редакторе.
 
-Следующим шагом будет добавить путь к файлу `index.js` в конфиге `bergamot.config.js` и указать путь компиляции:
+Следующим шагом будет добавить путь к файлу `index.js` в конфиге `bergamot.config.js` и указать путь компиляции. Следует обратить внимание на параметр root_path, в котором мы указываем путь к lpcandy. Делаем мы это для того чтобы явно указать от какой точки мы отталкиваемся при компиляции нашего проекта:
 
 ```jsx
 let js_transform = (js) => js.replace(/([>`}])(\s*\n\s*)([<`\$])/mg,"$1$3").replace(/\s*\n\s*/mg,' ')
 
 module.exports = {
     lpcandy: {
-        entry_point: "lpcandy/front/site/index.js",
-        bundle_path: "lpcandy/public/assets/lpcandy.min.js",
+        root_path: "<path_to_root_folder>/lpcandy",
+        entry_point: "front/site/index.js",
+        bundle_path: "public/assets/lpcandy.min.js",
         js_transform
     },
     projects: {
-        entry_point: "src/index.js",
-        bundle_path: "build/projects.min.js",
+        root_path: "<path_to_root_folder>/lpcandy",
+        entry_point: "../src/index.js",
+        bundle_path: "../build/projects.min.js",
         js_transform
     }
 }
